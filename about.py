@@ -1,11 +1,7 @@
 import streamlit as st
 
 def about_page():
-    # About page header
-    st.markdown('<h1 class="main-header">EcoExchange</h1>', unsafe_allow_html=True)
-    st.markdown('<p class="tagline">Turning Waste Into Wealth. Driving Sustainability.</p>', unsafe_allow_html=True)
     
-    # Mission Statement Section
     st.markdown('<h2 class="section-header">Our Mission</h2>', unsafe_allow_html=True)
     
     mission_col1, mission_col2 = st.columns([2, 1])

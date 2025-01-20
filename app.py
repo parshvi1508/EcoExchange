@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 from PIL import Image
 import pandas as pd
-
+from about import about_page
 st.set_page_config(
         page_title="EcoExchange | Home",
         page_icon="🌱",
@@ -94,6 +94,7 @@ st.markdown("""
         background-color: #0E8388 ;
         color: white ;
     }
+    
     </style>
 """, unsafe_allow_html=True)
 
@@ -103,6 +104,7 @@ def initialize_session_state():
     if 'username' not in st.session_state:
         st.session_state.username = None
 
+st.image("E:/Hackathon/Dorakacks/logo.jpg", width=100)
 st.markdown('<h1 class="main-header">EcoExchange</h1>', unsafe_allow_html=True)
 st.markdown('<p class="tagline">Turning Waste Into Wealth. Driving Sustainability.</p>', unsafe_allow_html=True)
 
@@ -193,12 +195,19 @@ if selected == "Home":
             st.button("Start Selling", use_container_width=True)
         with col2:
             st.button("Start Buying", use_container_width=True)
-
+elif selected == "About Us":
+    about_page()
 st.markdown("""
 <div style="text-align: center; margin-top: 3em; padding: 2em; background-color: #CBE4DE;">
     <p style="color: #2C3333;">© 2025 EcoExchange. Making sustainability profitable.</p>
 </div>
 """, unsafe_allow_html=True)
+
+
+
+
+
+
 
 if __name__ == "__main__":
     main()
