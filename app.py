@@ -104,7 +104,7 @@ def initialize_session_state():
     if 'username' not in st.session_state:
         st.session_state.username = None
 
-st.image("E:\Hackathon\Dorakacks\logo.jpg", width=100)
+st.image("./logo.jpg", width=100)
 st.markdown('<h1 class="main-header">EcoExchange</h1>', unsafe_allow_html=True)
 st.markdown('<p class="tagline">Turning Waste Into Wealth. Driving Sustainability.</p>', unsafe_allow_html=True)
 
@@ -202,12 +202,5 @@ st.markdown("""
     <p style="color: #2C3333;">© 2025 EcoExchange. Making sustainability profitable.</p>
 </div>
 """, unsafe_allow_html=True)
-
-
-
-
-
-
-
 if __name__ == "__main__":
     main()
