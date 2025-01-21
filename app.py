@@ -3,6 +3,12 @@ from streamlit_option_menu import option_menu
 from PIL import Image
 import pandas as pd
 from about import about_page
+from browse import browse_materials_page
+from sell import sell_materials_page
+from works import how_it_works_page
+from impact import impact_page
+from login import login_signup_page
+
 st.set_page_config(
         page_title="EcoExchange | Home",
         page_icon="🌱",
@@ -65,7 +71,7 @@ st.markdown("""
     
     
     div[data-testid="stHorizontalBlock"] > div:first-child {
-        background-color: #2E4F4F;
+        background-color: #black;
         border-radius: 8px;
         padding: 0 ;
         border-radius: 8px;
@@ -197,6 +203,17 @@ if selected == "Home":
             st.button("Start Buying", use_container_width=True)
 elif selected == "About Us":
     about_page()
+elif selected == "Browse Materials":
+    browse_materials_page()
+elif selected == "Sell Materials":
+    sell_materials_page()
+elif selected == "How It Works":
+    how_it_works_page()
+elif selected == "Impact":
+    impact_page()
+elif selected == "Login/Signup":
+    login_signup_page()
+    
 st.markdown("""
 <div style="text-align: center; margin-top: 3em; padding: 2em; background-color: #CBE4DE;">
     <p style="color: #2C3333;">© 2025 EcoExchange. Making sustainability profitable.</p>
