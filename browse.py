@@ -50,7 +50,7 @@ def browse_materials_page():
     """, unsafe_allow_html=True)
 
     
-    st.title("🌍 EcoExchange: Material Marketplace")
+    st.title("🌍Material Marketplace")
     
     
     data = load_materials_data()
