@@ -23,6 +23,7 @@ def browse_materials_page():
             padding: 20px;
             margin-bottom: 20px;
             transition: transform 0.3s ease;
+            color: black;
         }
         
         .material-card:hover {
@@ -45,6 +46,7 @@ def browse_materials_page():
         
         .stButton>button:hover {
             background-color: #2C3333;
+            color: white;
         }
         </style>
     """, unsafe_allow_html=True)

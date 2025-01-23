@@ -50,6 +50,7 @@ def sell_materials_page():
             padding: 2em;
             border-radius: 10px;
             margin: 1em 0;
+
         }
         
         .stButton button {

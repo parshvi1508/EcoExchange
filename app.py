@@ -139,7 +139,7 @@ if selected == "Home":
     col1, col2 = st.columns([3, 2])
 
     with col1:
-        st.markdown('<h2 class="section-header">Transform Waste into Opportunity</h2>', unsafe_allow_html=True)
+        st.markdown('<h2 class="section-header">Transform Waste into Treasure</h2>', unsafe_allow_html=True)
         st.markdown("""
         <div class="normal-text">
         Join our revolutionary marketplace where sustainability meets profitability. 
