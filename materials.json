@@ -1,0 +1,73 @@
+{
+    "vendors": [
+        {
+            "id": 0,
+            "name": "EcoRecycle Solutions",
+            "contact_name": "Rahul Sharma",
+            "email": "rahul@ecorecycle.com",
+            "phone": "+91 9876543210",
+            "location": "Mumbai",
+            "specialization": "Organic and Paper Waste"
+        },
+        {
+            "id": 1,
+            "name": "Green Materials Exchange",
+            "contact_name": "Priya Patel",
+            "email": "priya@greenmaterials.com",
+            "phone": "+91 9988776655",
+            "location": "Delhi",
+            "specialization": "Plastics and Metal Recycling"
+        },
+        {
+            "id": 2,
+            "name": "User 1001",
+            "contact_name": "User 1001",
+            "email": "asdf@asdf",
+            "phone": "12345",
+            "location": "Delhi",
+            "specialization": "Plastics"
+        }
+    ],
+    "materials": [
+        {
+            "id": 0,
+            "vendor_id": 0,
+            "title": "Organic Coconut Shells",
+            "category": "Organic Waste",
+            "price_per_unit": 2.5,
+            "unit": "kg",
+            "quantity_available": 500,
+            "description": "High-quality coconut shells for crafts and activated carbon production"
+        },
+        {
+            "id": 1,
+            "vendor_id": 0,
+            "title": "Cardboard Waste Bundles",
+            "category": "Paper & Cardboard",
+            "price_per_unit": 0.75,
+            "unit": "kg",
+            "quantity_available": 1000,
+            "description": "Clean, sorted cardboard ready for recycling"
+        },
+        {
+            "id": 2,
+            "vendor_id": 1,
+            "title": "Plastic PET Bottles",
+            "category": "Plastics",
+            "price_per_unit": 1.2,
+            "unit": "kg",
+            "quantity_available": 750,
+            "description": "Clean, sorted PET plastic bottles for recycling"
+        },
+        {
+            "id": 3,
+            "vendor_id": 2,
+            "title": "Clean Plastic Bottles",
+            "category": "Plastics",
+            "price_per_unit": 0.6,
+            "unit": "piece",
+            "quantity_available": 80,
+            "description": "good"
+        }
+    ]
+}

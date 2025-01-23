@@ -3,9 +3,7 @@ import streamlit as st
 def about_page():
     
     st.markdown('<h2 class="section-header">Our Mission</h2>', unsafe_allow_html=True)
-    
     mission_col1, mission_col2 = st.columns([2, 1])
-    
     with mission_col1:
         st.markdown("""
         <div class="normal-text">
@@ -30,7 +28,6 @@ def about_page():
         </div>
         """, unsafe_allow_html=True)
     
-    # About Us Content
     st.markdown('<h2 class="section-header">About Us</h2>', unsafe_allow_html=True)
     st.markdown("""
     <div class="normal-text">
@@ -42,7 +39,6 @@ def about_page():
     </div>
     """, unsafe_allow_html=True)
     
-    # Vision Section
     st.markdown('<h3 class="section-header">Our Vision</h3>', unsafe_allow_html=True)
     st.markdown("""
     <div class="normal-text">
@@ -52,13 +48,12 @@ def about_page():
     </div>
     """, unsafe_allow_html=True)
     
-    # Why Choose Us Section
     st.markdown('<h3 class="section-header">Why Choose Us?</h3>', unsafe_allow_html=True)
     st.markdown("""
     <div class="normal-text">
-        - **Sustainability Focused:** We prioritize environmentally friendly practices by promoting the reuse of materials.<br>
-        - **Circular Economy:** Our platform supports a sustainable and self-sufficient economy where materials have a second life.<br>
-        - **Innovative Solutions:** EcoExchange connects buyers and sellers in an innovative way, reducing waste and promoting green solutions.
+        - Sustainability Focused: We prioritize environmentally friendly practices by promoting the reuse of materials.<br>
+        - Circular Economy: Our platform supports a sustainable and self-sufficient economy where materials have a second life.<br>
+        - Innovative Solutions: EcoExchange connects buyers and sellers in an innovative way, reducing waste and promoting green solutions.
     </div>
     """, unsafe_allow_html=True)
 about_page()

@@ -198,9 +198,50 @@ if selected == "Home":
         
         col1, col2 = st.columns(2)
         with col1:
-            st.button("Start Selling", use_container_width=True)
+            if st.button(" Login", use_container_width=True):
+                st.markdown('<div class="auth-container">', unsafe_allow_html=True)
+                with st.form("login_form"):
+                    st.markdown('<h3 style="color: #2E4F4F;">Welcome Back!</h3>', unsafe_allow_html=True)
+                    email = st.text_input("Email")
+                    password = st.text_input("Password", type="password")
+                    remember_me = st.checkbox("Remember me")
+                    if st.form_submit_button("Login"):
+                        st.success("Successfully logged in!")
+                
+                    st.markdown("""
+                    <div style="text-align: center; margin-top: 1em;">
+                        <a href="#" style="color: #0E8388;">Forgot Password?</a>
+                    </div>
+                """, unsafe_allow_html=True)
+            st.markdown('</div>', unsafe_allow_html=True)
         with col2:
-            st.button("Start Buying", use_container_width=True)
+            if st.button("Sign Up", use_container_width=True):
+                st.markdown('<div class="auth-container">', unsafe_allow_html=True)
+                with st.form("signup_form"):
+                    st.markdown('<h3 style="color: #2E4F4F;">Create Account</h3>', unsafe_allow_html=True)
+            
+                    col1, col2 = st.columns(2)
+                    with col1:
+                        first_name = st.text_input("First Name")
+                    with col2:
+                        last_name = st.text_input("Last Name")
+            
+                    email = st.text_input("Email")
+                    phone = st.text_input("Phone Number")
+                    password = st.text_input("Password", type="password")
+                    confirm_password = st.text_input("Confirm Password", type="password")
+            
+                    user_type = st.selectbox("I want to:", ["Buy Materials", "Sell Materials", "Both"])
+            
+                    terms = st.checkbox("I agree to the Terms and Conditions")
+                    submit_button = st.form_submit_button("Create Account")
+                    if st.form_submit_button("Create Account"):
+                        if terms:
+                            st.success("Account created successfully!")
+                        else:
+                            st.error("Please accept the Terms and Conditions")
+        
+                st.markdown('</div>', unsafe_allow_html=True)
 elif selected == "About Us":
     about_page()
 elif selected == "Browse Materials":

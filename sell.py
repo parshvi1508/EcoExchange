@@ -1,5 +1,29 @@
 import streamlit as st
+import json
+import os
 from datetime import datetime
+import uuid
+
+def load_materials_data():
+    """Load existing materials data from JSON file."""
+    if not os.path.exists('materials.json'):
+        return {"vendors": [], "materials": []}
+    
+    with open('materials.json', 'r') as file:
+        return json.load(file)
+
+def save_materials_data(data):
+    """Save updated materials data to JSON file."""
+    with open('materials.json', 'w') as file:
+        json.dump(data, file, indent=4)
+
+def generate_unique_id(data_list):
+    """Generate a unique ID for new materials or vendors."""
+    existing_ids = set(item['id'] for item in data_list)
+    new_id = 0
+    while new_id in existing_ids:
+        new_id += 1
+    return new_id
 
 def sell_materials_page():
     st.markdown("""
@@ -52,7 +76,6 @@ def sell_materials_page():
         </div>
     """, unsafe_allow_html=True)
     
-    
     st.markdown('<div class="form-container">', unsafe_allow_html=True)
     with st.form("material_listing_form"):
         col1, col2 = st.columns(2)
@@ -83,23 +106,18 @@ def sell_materials_page():
                 "As Is"
             ])
         
-        st.markdown('<h4 class="section-header">Material Description</h4>', unsafe_allow_html=True)
         description = st.text_area(
             "Describe your material in detail",
             placeholder="Include details about quality, source, potential uses, etc.",
             height=150
         )
         
-        
-        st.markdown('<h4 class="section-header">Upload Images</h4>', unsafe_allow_html=True)
         uploaded_files = st.file_uploader(
             "Upload up to 5 images of your material",
             type=["jpg", "jpeg", "png"],
             accept_multiple_files=True
         )
         
-        
-        st.markdown('<h4 class="section-header">Contact Information</h4>', unsafe_allow_html=True)
         col1, col2 = st.columns(2)
         with col1:
             contact_name = st.text_input("Contact Name")
@@ -108,18 +126,54 @@ def sell_materials_page():
             contact_phone = st.text_input("Phone Number")
             preferred_contact = st.selectbox("Preferred Contact Method", ["Email", "Phone", "Both"])
         
-        
-        st.markdown("### Terms and Conditions")
         terms_accepted = st.checkbox("I confirm that the information provided is accurate and I have the right to sell these materials")
         
         submit_button = st.form_submit_button("List Material")
         
         if submit_button:
-            if terms_accepted:
-                st.success("Your material has been listed successfully! Buyers will be able to see your listing now.")
-                st.info("You can manage your listings from your dashboard.")
-            else:
+            if not all([material_title, category, quantity, price_per_unit, location, contact_name, contact_email, contact_phone]):
+                st.error("Please fill in all required fields.")
+                return
+            
+            if not terms_accepted:
                 st.error("Please accept the terms and conditions to list your material.")
+                return
+            
+            
+            data = load_materials_data()
+            
+            
+            material_id = generate_unique_id(data['materials'])
+            vendor_id = generate_unique_id(data['vendors'])
+            
+            
+            new_vendor = {
+                "id": vendor_id,
+                "name": contact_name,
+                "contact_name": contact_name,
+                "email": contact_email,
+                "phone": contact_phone,
+                "location": location,
+                "specialization": category
+            }
+            data['vendors'].append(new_vendor)
+            
+            
+            new_material = {
+                "id": material_id,
+                "vendor_id": vendor_id,
+                "title": material_title,
+                "category": category,
+                "price_per_unit": price_per_unit,
+                "unit": unit,
+                "quantity_available": quantity,
+                "description": description
+            }
+            data['materials'].append(new_material)
+            
+            save_materials_data(data)
+            
+            st.success("Your material has been listed successfully!")
+            st.info(f"Your material ID is {material_id}. You can use this to track your listing.")
     
     st.markdown('</div>', unsafe_allow_html=True)
-
