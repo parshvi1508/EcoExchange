@@ -18,14 +18,27 @@ def browse_materials_page():
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
         
         .material-card {
-            background-color: #CBE4DE;
+             background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            overflow: hidden;
+            position: relative;
             border-radius: 10px;
             padding: 20px;
             margin-bottom: 20px;
             transition: transform 0.3s ease;
             color: black;
         }
-        
+        .material-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--eco-green), var(--ocean-blue));
+}
         .material-card:hover {
             transform: scale(1.02);
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
