@@ -15,16 +15,17 @@ def how_it_works_page():
         }
         
         .process-card {
-            background-color: #CBE4DE;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 15px 0;
-            transition: transform 0.2s;
+            background: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
+    overflow: hidden;
+    position: relative;
         }
         
         .process-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+           transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
         
         .step-number {
@@ -38,7 +39,15 @@ def how_it_works_page():
             justify-content: center;
             margin-bottom: 10px;
         }
-        
+        .process-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--eco-green), var(--ocean-blue));
+}
         .normal-text {
             font-size: 1.1em;
             color: white;

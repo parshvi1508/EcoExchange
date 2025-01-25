@@ -7,7 +7,7 @@ def login_signup_page():
         
         .section-header {
             background-color: black;
-            color: #2C3333;
+            color: linear-gradient(45deg, var(--eco-green), var(--deep-teal));
             font-size: 1.8em;
             font-weight: 600;
             margin-top: 1em;
@@ -15,31 +15,80 @@ def login_signup_page():
         }
         
         .auth-container {
-            background-color: #CBE4DE;
+            background-color: black;
             padding: 2em;
             border-radius: 10px;
             margin: 2em 0;
             max-width: 500px;
+            color: linear-gradient(45deg, var(--eco-green), var(--deep-teal));
         }
         
         .tab-container {
             margin-bottom: 2em;
         }
+         div[data-testid="stHorizontalBlock"] > div:first-child {
+        background-color: #black;
+        border-radius: 8px;
+        padding: 0 ;
+        border-radius: 8px;
+        margin-bottom: 2em;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--forest-green);
+}
+
+.stTextInput > div > div > input,
+.stSelectbox > div > div > div {
+    
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.stTextInput > div > div > input:focus,
+.stSelectbox > div > div > div:focus {
+    border-color: var(--eco-green);
+    box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+}
+
+
+    .stTabs [data-baseweb="tab-list"] {
+    background: linear-gradient(90deg, var(--eco-green), var(--deep-teal));
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.stTabs [data-baseweb="tab"] {
+    color: white;
+    transition: all 0.3s ease;
+    border-radius: 40px;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: scale(1.05);
+}
         
-        .stButton button {
-            background-color: #0E8388;
-            color: white;
-            font-weight: bold;
-            width: 100%;
-            padding: 0.5em;
-            border-radius: 5px;
-            border: none;
-            margin-top: 1em;
-        }
-        
-        .stButton button:hover {
-            background-color: #2E4F4F;
-        }
+        .stButton > button {
+    background: linear-gradient(45deg, var(--eco-green), var(--deep-teal));
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stButton > button:hover {
+    background: linear-gradient(225deg, var(--eco-green), var(--deep-teal));
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
         
         .normal-text {
             font-size: 1.1em;
@@ -57,7 +106,7 @@ def login_signup_page():
         with tab1:
             st.markdown('<div class="auth-container">', unsafe_allow_html=True)
             with st.form("login_form"):
-                st.markdown('<h3 style="color: #2E4F4F;">Welcome Back!</h3>', unsafe_allow_html=True)
+                st.markdown('<h3 style="color: linear-gradient(45deg, var(--eco-green), var(--deep-teal));">Welcome Back!</h3>', unsafe_allow_html=True)
                 
                 email = st.text_input("Email")
                 password = st.text_input("Password", type="password")
@@ -69,7 +118,7 @@ def login_signup_page():
                 
                 st.markdown("""
                     <div style="text-align: center; margin-top: 1em;">
-                        <a href="#" style="color: #0E8388;">Forgot Password?</a>
+                        <a href="#" style="color: linear-gradient(45deg, var(--eco-green), var(--deep-teal));">Forgot Password?</a>
                     </div>
                 """, unsafe_allow_html=True)
             st.markdown('</div>', unsafe_allow_html=True)
@@ -77,7 +126,7 @@ def login_signup_page():
         with tab2:
             st.markdown('<div class="auth-container">', unsafe_allow_html=True)
             with st.form("signup_form"):
-                st.markdown('<h3 style="color: #2E4F4F;">Create Account</h3>', unsafe_allow_html=True)
+                st.markdown('<h3 style="color: linear-gradient(45deg, var(--eco-green), var(--deep-teal));">Create Account</h3>', unsafe_allow_html=True)
                 
                 col1, col2 = st.columns(2)
                 with col1:

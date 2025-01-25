@@ -16,12 +16,21 @@ def impact_page():
         }
         
         .impact-card {
-            background-color: #CBE4DE;
+            background: linear-gradient(45deg, var(--eco-green), var(--deep-teal));
+    color: white;
             padding: 20px;
             border-radius: 10px;
             margin: 15px 0;
             text-align: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
         }
+        .impact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    background: white;
+    color: linear-gradient(45deg, var(--eco-green), var(--deep-teal));
+}
         
         .impact-number {
             font-size: 2.5em;
@@ -31,11 +40,21 @@ def impact_page():
         }
         
         .testimonial-card {
-            background-color: #CBE4DE;
+            background: white;
             padding: 20px;
             border-radius: 10px;
             margin: 15px 0;
+            color: linear-gradient(45deg, var(--eco-green), var(--deep-teal));
         }
+        ::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--eco-green), var(--ocean-blue));
+}
         
         .normal-text {
             font-size: 1.1em;
@@ -53,7 +72,7 @@ def impact_page():
         st.markdown("""
             <div class="impact-card">
                 <div class="impact-number">50,000+</div>
-                <h4 style="color: #2E4F4F;">Tons of Waste Recycled</h4>
+                <h4 style="color: #2E4F4F;">Tons of Waste Can Be Recycled</h4>
             </div>
         """, unsafe_allow_html=True)
         
@@ -61,7 +80,7 @@ def impact_page():
         st.markdown("""
             <div class="impact-card">
                 <div class="impact-number">₹20M+</div>
-                <h4 style="color: #2E4F4F;">Value Generated</h4>
+                <h4 style="color: #2E4F4F;">Value can be Generated</h4>
             </div>
         """, unsafe_allow_html=True)
         
@@ -69,17 +88,17 @@ def impact_page():
         st.markdown("""
             <div class="impact-card">
                 <div class="impact-number">5,000+</div>
-                <h4 style="color: #2E4F4F;">Active Users</h4>
+                <h4 style="color: #2E4F4F;">Users can be connected</h4>
             </div>
         """, unsafe_allow_html=True)
     
     st.markdown('<h3 class="section-header">Environmental Benefits</h3>', unsafe_allow_html=True)
     
     benefits = {
-        "Carbon Footprint Reduction": "Prevented 75,000 metric tons of CO2 emissions through material recycling",
-        "Landfill Diversion": "Diverted 50,000+ tons of waste from landfills",
-        "Water Conservation": "Saved 100 million+ liters of water through material reuse",
-        "Energy Savings": "Reduced energy consumption by 30% compared to virgin material production"
+        "Carbon Footprint Reduction": "Prevents 75,000 metric tons of CO2 emissions through material recycling",
+        "Landfill Diversion": "Diverts 50,000+ tons of waste from landfills",
+        "Water Conservation": "Saves 100 million+ liters of water through material reuse",
+        "Energy Savings": "Reduces energy consumption by 30% compared to virgin material production"
     }
     
     for title, description in benefits.items():

@@ -30,8 +30,20 @@ def sell_materials_page():
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
         
+        :root {
+    --eco-green: #2ecc71;
+    --forest-green: #27ae60;
+    --ocean-blue: #3498db;
+    --deep-teal: #16a085;
+    --soft-gray: #ecf0f1;
+} 
+    body {
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(39, 174, 96, 0.1) 100%);
+    font-family: 'Inter', sans-serif;
+}
+
         .section-header {
-            background-color: black;
+            background-color:  linear-gradient(90deg, var(--eco-green), var(--ocean-blue));;
             color: #2C3333;
             font-size: 1.8em;
             font-weight: 600;
@@ -46,26 +58,32 @@ def sell_materials_page():
         }
         
         .form-container {
-            background-color: #CBE4DE;
-            padding: 2em;
-            border-radius: 10px;
-            margin: 1em 0;
+             background:  linear-gradient(90deg, var(--eco-green), var(--ocean-blue));
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    overflow: hidden;
+    position: relative;
 
         }
         
-        .stButton button {
-            background-color: #0E8388;
-            color: white;
-            font-weight: bold;
-            padding: 0.5em 2em;
-            border-radius: 5px;
-            border: none;
-            transition: background-color 0.3s;
-        }
-        
-        .stButton button:hover {
-            background-color: #2E4F4F;
-        }
+        .stButton > button {
+    background: linear-gradient(45deg, var(--eco-green), var(--deep-teal));
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stButton > button:hover {
+    background: linear-gradient(225deg, var(--eco-green), var(--deep-teal));
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
         </style>
     """, unsafe_allow_html=True)
 
